@@ -1,3 +1,12 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-row, .form-control{
+    font-size: 24px;
+}
+
+
 #trainLabel {
     font-size: 30px;
 }
