@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,37 +8,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets\reset.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets\style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
-        <div class="table-responsive">
-                <table class="table">
-                  
-                </table>
-              </div>
+    <span id="trainLabel">Current Train Schedule</span>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <span id="trainLabel">Add Train</span>
     <form>
         <div class="form-row">
-          <div class="form-group col-md-8">
-            <label for="inputEmail4">Train Name</label>
-            <input type="text" class="form-control" id="trainName" placeholder="Train Name">
-          </div>
-          <div class="form-group col-md-8">
-            <label for="inputPassword4">Destination</label>
-            <input type="text" class="form-control" id="destination" placeholder="Destination">
-          </div>
-        </div>
-        <div class="form-group col-md-8">
-          <label for="inputAddress">Train Time(HH:mm - Military Time)</label>
-          <input type="text" class="form-control" id="trainTime" placeholder="Train Time">
-        </div>
-        <div class="form-group col-md-8">
-          <label for="inputAddress2">Frequency (min)</label>
-          <input type="text" class="form-control" id="frequency" placeholder="Frequency">
-        </div>
-        
+            <div class="form-group col-md-8">
+                <label for="inputEmail4">Train Name</label>
+                <input type="text" class="form-control" id="trainName" placeholder="Train Name">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputPassword4">Destination</label>
+                <input type="text" class="form-control" id="destination" placeholder="Destination">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputAddress">Train Time(HH:mm - Military Time)</label>
+                <input type="time" class="form-control" id="trainTime" placeholder="Train Time">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputAddress2">Frequency (min)</label>
+                <input type="text" class="form-control" id="frequency" placeholder="Frequency">
+            </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+    </form>
 </body>
 <script src="assets\Javascript\Javascript.js"></script>
+
 </html>
