@@ -1,8 +1,9 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.form-row, .form-control{
+.form-row,
+.form-control {
     font-size: 24px;
 }
 
