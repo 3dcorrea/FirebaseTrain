@@ -6,43 +6,20 @@ var config = {
   storageBucket: "train-schedule-5fe74.appspot.com",
   messagingSenderId: "341891328107"
 };
-
 firebase.initializeApp(config);
 
 var database = firebase.database();
-// Get element
-const preObject = $('object');
-// create references
-const dbRefObject = database().ref().child('object');
 
-dbRefObject.on('value', snap => console.log(snap.val()));
-
-
-
-
-
-
-
-
-
-// var tFrequency = 3;
-// // Time is 3:30 AM
-// var firstTime = "03:30";
-// // First Time (pushed back 1 year to make sure it comes before current time)
-// var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
-// console.log(firstTimeConverted);
-// // Current Time
-// var currentTime = moment();
-// console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-// // Difference between the times
-// var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-// console.log("DIFFERENCE IN TIME: " + diffTime);
-// // Time apart (remainder)
-// var tRemainder = diffTime % tFrequency;
-// console.log(tRemainder);
-// // Minute Until Train
-// var tMinutesTillTrain = tFrequency - tRemainder;
-// console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
-// // Next Train
-// var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-// console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+$('#addTrainBtn').on("click", function() {
+  // This captures the users input
+  var trainName = $("#trainNameInput").val().trim();
+  var destination = $("#destinationInput").val().trim();
+  var firstTrain = moment($("#timeInput").val().trim(), "HH:mm").format("HH:mm");
+  var frequency = $("#frequencyInput").val().trim();
+  // this creates an object that holds train information
+  var newTrain = {
+      name: trainName,
+      place: destination,
+      ftrain: firstTrain,
+      freq: frequency
+    }
