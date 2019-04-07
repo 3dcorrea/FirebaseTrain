@@ -34,13 +34,12 @@ $('#addTrainBtn').on("click", function () {
   $("#destinationInput").val("");
   $("#timeInput").val("");
   $("#frequencyInput").val("");
-  // Prevents moving to new page
+  // This prevents the user from moving to new page
   return false;
 });
 
 // This creates a firebase listener for adding trains to the database and dynamically creates a row in the html when the user adds a train
 database.ref().on("child_added", function (childSnapshot) {
-
   // This stores childSnapshot as a variable
   var trainName = childSnapshot.val().name;
   var destination = childSnapshot.val().place;
@@ -51,9 +50,9 @@ database.ref().on("child_added", function (childSnapshot) {
   var currentTime = moment().format("HH:mm");;
   // This stores the difference between the currentTime and first train converted in a variable.
   var timeDiff = moment().diff(moment(firstTimeConverted), "minutes");
-  // find Remainder of the time left and store in a variable
+  // This finds the remainder of the time left and stores it in a variable
   var timeRemainder = timeDiff % frequency;
-  // to calculate minutes till train,we store it in a variable
+  // This creates a variable to calculate the time until the next train
   var minToTrain = frequency - timeRemainder;
   // this variable is for the next train
   var nxTrain = moment().add(minToTrain, "minutes").format("HH:mm");
