@@ -1,4 +1,14 @@
-// I must have done something wrong with Firebase because I could not get Firebase to sync. I kept getting "null".
+// I must have done something wrong with Firebase because I could not get Firebase to sync. I kept getting "null". This was what I had in my Firebase:
+// train-schedule-5fe74
+// Destination: 
+// "Name"
+// Minutes Away: 
+// "Time"
+// Next Arrival: 
+// "Time"
+// Train: 
+// "trainNameInput"
+// I cant say that I understand Firebase too much at all. I'm sure that with more hands-on experience, I'll have a greater understanding and know what to do.
 
 var config = {
   apiKey: "AIzaSyBkozH79Q48zD8uih-mCz2DOjSWc-zyLDU",
