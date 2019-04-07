@@ -3,32 +3,45 @@ var config = {
   authDomain: "train-schedule-5fe74.firebaseapp.com",
   databaseURL: "https://train-schedule-5fe74.firebaseio.com",
   projectId: "train-schedule-5fe74",
-  storageBucket: "",
+  storageBucket: "train-schedule-5fe74.appspot.com",
   messagingSenderId: "341891328107"
 };
-
 firebase.initializeApp(config);
 
 var database = firebase.database();
+// Get element
+const preObject = $('object');
+// create references
+const dbRefObject = database().ref().child('object');
 
-var tFrequency = 3;
-// Time is 3:30 AM
-var firstTime = "03:30";
-// First Time (pushed back 1 year to make sure it comes before current time)
-var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
-console.log(firstTimeConverted);
-// Current Time
-var currentTime = moment();
-console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-// Difference between the times
-var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-console.log("DIFFERENCE IN TIME: " + diffTime);
-// Time apart (remainder)
-var tRemainder = diffTime % tFrequency;
-console.log(tRemainder);
-// Minute Until Train
-var tMinutesTillTrain = tFrequency - tRemainder;
-console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
-// Next Train
-var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+dbRefObject.on('value', snap => console.log(snap.val()));
+
+
+
+
+
+
+
+
+
+// var tFrequency = 3;
+// // Time is 3:30 AM
+// var firstTime = "03:30";
+// // First Time (pushed back 1 year to make sure it comes before current time)
+// var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+// console.log(firstTimeConverted);
+// // Current Time
+// var currentTime = moment();
+// console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+// // Difference between the times
+// var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+// console.log("DIFFERENCE IN TIME: " + diffTime);
+// // Time apart (remainder)
+// var tRemainder = diffTime % tFrequency;
+// console.log(tRemainder);
+// // Minute Until Train
+// var tMinutesTillTrain = tFrequency - tRemainder;
+// console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+// // Next Train
+// var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+// console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
