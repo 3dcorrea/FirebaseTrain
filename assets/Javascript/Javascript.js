@@ -35,3 +35,14 @@ $('#addTrainBtn').on("click", function() {
   // Prevents moving to new page
   return false;
 });
+
+// This creates a firebase listener for adding trains to the database and dynamically creates a row in the html when the user adds a train
+database.ref().on("child_added", function(childSnapshot) {
+  console.log(childSnapshot.val());
+  // This stores childSnapshot as a variable
+  var trainName = childSnapshot.val().name;
+  var destination = childSnapshot.val().place;
+  var firstTrain = childSnapshot.val().ftrain;
+  var frequency = childSnapshot.val().freq;
+ 
+});
