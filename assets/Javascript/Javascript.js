@@ -22,4 +22,16 @@ $('#addTrainBtn').on("click", function() {
       place: destination,
       ftrain: firstTrain,
       freq: frequency
-    }
+  }
+
+  // This(v) pushes that(^)  to the database
+  database.ref().push(newTrain);
+  console.log(newTrain.name);
+  // this clears the inputs
+  $("#trainNameInput").val("");
+  $("#destinationInput").val("");
+  $("#timeInput").val("");
+  $("#frequencyInput").val("");
+  // Prevents moving to new page
+  return false;
+});
